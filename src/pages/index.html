@@ -1,11 +1,11 @@
-<!doctype html>
+<!DOCTYPE html>
 <html class="no-js" lang="ru">
 
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="theme-color" content="#000000" />
-	<link rel="icon" href="/favicon.ico" />
+	<meta name="theme-color" content="#000000">
+	<link rel="icon" href="/favicon.ico">
 	<!-- <link rel="manifest" href="/manifest.json" /> -->
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -35,7 +35,7 @@
 	</div>
 
 	<!--контейнер модального окна-->
-	<div class="modal" id="modal-container">
+	<!-- <div class="modal" id="modal-container">
 		<div class="modal__container">
 			<button class="modal__close" aria-label="закрыть"></button>
 			<div class="modal__content">
@@ -57,10 +57,10 @@
 				</form>
 			</div>
 		</div>
-	</div>
+	</div> -->
 
 	<!--примеры модального окна товара модального окна-->
-	<div class="modal">
+	<!-- <div class="mdoal">
 		<div class="modal__container">
 			<button class="modal__close" aria-label="закрыть"></button>
 			<div class="modal__content">
@@ -78,8 +78,10 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 
+
+	<!-- 	
 	<div class="modal">
 		<div class="modal__container">
 			<button class="modal__close" aria-label="закрыть"></button>
@@ -113,8 +115,9 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 
+	<!-- 
 	<div class="modal">
 		<div class="modal__container">
 			<button class="modal__close" aria-label="закрыть"></button>
@@ -139,8 +142,8 @@
 				</form>
 			</div>
 		</div>
-	</div>
-
+	</div> -->
+	<!-- 
 	<div class="modal">
 		<div class="modal__container">
 			<button class="modal__close" aria-label="закрыть"></button>
@@ -162,9 +165,9 @@
 				</form>
 			</div>
 		</div>
-	</div>
+	</div> -->
 
-	<div class="modal">
+	<!-- <div class="modal">
 		<div class="modal__container">
 			<button class="modal__close" aria-label="закрыть"></button>
 			<div class="modal__content">
@@ -173,6 +176,14 @@
 					<p class="film__description">Списано 153 250 синапсов</p>
 					<button class="button order-success__close">За новыми покупками!</button>
 				</div>
+			</div>
+		</div>
+	</div> -->
+
+	<div class="modal">
+		<div class="modal__container">
+			<button class="modal__close" aria-label="закрыть"></button>
+			<div class="modal__content">
 			</div>
 		</div>
 	</div>
@@ -198,7 +209,7 @@
 		<div class="card card_full">
 			<img class="card__image" src="<%=require('../images/Subtract.svg')%>" alt="" />
 			<div class="card__column">
-				<span class="card__category card__category_other">другое</span>
+				<span class="card__category">другое</span>
 				<h2 class="card__title">Бэкенд-антистресс</h2>
 				<p class="card__text">Если планируете решать задачи в тренажёре, берите два.</p>
 				<div class="card__row">
@@ -241,11 +252,13 @@
 				</div>
 				<label class="order__field">
 					<span class="form__label modal__title">Адрес доставки</span>
-					<input name="address" class="form__input" type="text" placeholder="Введите адрес" />
+					<input name="address" class="form__input" type="text" placeholder="Введите адрес" minlength="3"
+						data-error-message="Разрешены только латинские и кириллические буквы, знаки дефиса и пробелы."
+						required />
 				</label>
 			</div>
 			<div class="modal__actions">
-				<button type="submit" disabled class="button order__button">Далее</button>
+				<button type="submit" name="next" class="button order__button">Далее</button>
 				<span class="form__errors"></span>
 			</div>
 		</form>
@@ -256,15 +269,15 @@
 			<div class="order">
 				<label class="order__field">
 					<span class="form__label modal__title">Email</span>
-					<input name="email" class="form__input" type="text" placeholder="Введите Email" />
+					<input name="email" class="form__input" type="email" placeholder="Введите Email" required />
 				</label>
 				<label class="order__field">
 					<span class="form__label modal__title">Телефон</span>
-					<input name="phone" class="form__input" type="text" placeholder="+7 (" />
+					<input name="phone" class="form__input" type="tel" placeholder="+7" required />
 				</label>
 			</div>
 			<div class="modal__actions">
-				<button type="submit" disabled class="button">Оплатить</button>
+				<button type="submit" name="payment" class="button">Оплатить</button>
 				<span class="form__errors"></span>
 			</div>
 		</form>
